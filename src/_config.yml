@@ -19,7 +19,7 @@ kramdown:
   input: GFM
 
 ############################################################################
-# 以下はvim-jp固有の設定項目
+# 以下はviai-doc-en固有の設定項目
 
 # baseurl と紛らわしいが別物なので要注意
-base-url:    http://vim-jp.org/vimdoc-en
+base-url:    https://viai-editor.github.io/viai-doc-en

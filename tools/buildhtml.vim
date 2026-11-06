@@ -67,7 +67,7 @@ function! s:ToJekyll()
   " YAML front matter
   call append(0, [
         \ '---',
-        \ 'layout: vimdoc',
+        \ 'layout: viai-doc',
         \ printf("helpname: '%s'", helpname),
         \ '---',
         \ ])
