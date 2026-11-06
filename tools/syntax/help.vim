@@ -41,7 +41,9 @@ syn match helpNormal		"|.*====*|"
 syn match helpNormal		"|||"
 syn match helpNormal		":|vim:|"	" for :help modeline
 syn match helpVim		"\<Vim version [0-9][0-9.a-z]*"
+syn match helpVim		"\<ViAI version [0-9][0-9.a-z]*"
 syn match helpVim		"VIM REFERENCE.*"
+syn match helpVim		"VIAI REFERENCE.*"
 syn match helpOption		"'[a-z]\{2,\}'"
 syn match helpOption		"'t_..'"
 syn match helpCommand		"`[^` \t]\+`"hs=s+1,he=e-1 contains=helpBacktick
