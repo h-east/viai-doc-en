@@ -34,8 +34,7 @@ jobs:
       - name: Check commit IDs
         id: commitid
         run: |
-          echo "vim=$(git -C vim rev-parse HEAD)" >> $GITHUB_OUTPUT
-          echo "vim_faq=$(git -C vim_faq rev-parse HEAD)" >> $GITHUB_OUTPUT
+          echo "viai=$(git -C viai rev-parse HEAD)" >> $GITHUB_OUTPUT
 
       - name: Upload vim generated HTML files as an artifact
         uses: actions/upload-artifact@v7

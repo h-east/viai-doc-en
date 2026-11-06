@@ -7,20 +7,15 @@ all:
 	$(MAKE) html
 	$(MAKE) jekyl-build-by-docker
 
-html-prepare: vim/runtime/doc vim_faq/doc target/html/doc
+html-prepare: viai/runtime/doc target/html/doc
 	rm -f target/html/doc/*.txt
-	cp vim/runtime/doc/*.txt target/html/doc
-	cp vim_faq/doc/*.txt target/html/doc
+	cp viai/runtime/doc/*.txt target/html/doc
 
 html: html-prepare
 	-cd target/html/doc ; vim -eu ../../../tools/buildhtml.vim -c "qall!"
 
-vim/runtime/doc:
-	git clone --depth=1 https://github.com/vim/vim.git
-	cd vim && git apply ../tools/add-vimfaq-link.diff
-
-vim_faq/doc:
-	git clone --depth=1 https://github.com/chrisbra/vim_faq.git
+viai/runtime/doc:
+	git clone --depth=1 https://github.com/viai-editor/viai.git
 
 target/html/doc:
 	mkdir -p $@
@@ -29,7 +24,7 @@ clean:
 	rm -rf target
 
 distclean: clean
-	rm -rf vim vim_faq
+	rm -rf viai
 
 jekyll-build-prepare:
 	mkdir -p $(JEKYLL_WORKDIR)

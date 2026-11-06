@@ -2,6 +2,5 @@
 *.sw?
 /_gh_pages/
 /target/
-/vim/
-/vim_faq/
+/viai/
 /tmp/
