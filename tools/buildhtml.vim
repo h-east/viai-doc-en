@@ -3,6 +3,8 @@ set nomore
 set encoding=utf-8
 set fileencodings=utf-8
 syntax on
+" CI has no terminal, use the GUI colors for TOhtml
+set termguicolors
 colorscheme delek
 let g:html_no_progress = 1
 
