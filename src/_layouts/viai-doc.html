@@ -9,6 +9,7 @@
 <meta name="settings" content="no_pre,use_css,expand_tabs">
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="style.css" type="text/css" />
+<script src="theme.js" type="text/javascript"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 <script src="mark-current-page.js" type="text/javascript"></script>
@@ -28,6 +29,13 @@
   <span class="EnglishJapaneseLink">
     <span class="CurrentLanguage">English</span>
     | <a href="https://viai-editor.github.io/viai-doc-ja{{ page.url }}">日本語</a>
+    <span class="DarkModeSwitch">
+      | <label>Dark mode: <select id="DarkMode">
+        <option value="auto">Auto</option>
+        <option value="on">On</option>
+        <option value="off">Off</option>
+      </select></label>
+    </span>
   </span>
 </div>
 </header>

@@ -160,92 +160,113 @@ footer {
     float: right;
 }
 
+/* Dark mode switch, shown only when theme.js runs */
+.DarkModeSwitch {
+    display: none;
+}
+:root[data-theme] .DarkModeSwitch {
+    display: inline;
+}
+.DarkModeSwitch select {
+    border: 1px solid #c3c3c3;
+    font: inherit;
+}
+
 /* Dark mode, colors taken from the classic2 color scheme */
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #c6c6c6;
-        background-color: #000000;
-    }
-    :where(a:link) {
-        color: #8080cc;
-    }
-    :where(a:visited) {
-        color: #af87af;
-    }
-    h1 {
-        color: #8080cc;
-    }
-    .Todo {
-        color: #0000af;
-        background-color: #afaf00;
-    }
-    .Ignore {
-        color: #282828;
-    }
-    .PreProc {
-        color: #8080c0;
-    }
-    .Special {
-        color: #eebb00;
-    }
-    .Identifier {
-        color: #008787;
-    }
-    span.Constant {
-        color: #df8787;
-    }
-    .Statement {
-        color: #df8700;
-        font-weight: normal;
-    }
-    .Type,
-    span.Type {
-        color: #2e8b57;
-        font-weight: normal;
-    }
-    .Error {
-        color: #c6c6c6;
-        background-color: #8b0000;
-    }
-    .Comment,
-    .helpExample {
-        color: #00af00;
-    }
-    header,
-    nav,
-    article.Vimdoc,
-    footer {
-        border-color: #626262;
-    }
-    nav dt {
-        border-top-color: #626262;
-        border-left-color: #8080c0;
-        color: #8080c0;
-    }
-    nav li a:active,
-    nav li a:hover {
-        background-color: #005f5f;
-        color: #c6c6c6;
-    }
-    nav li a.CurrentPage {
-        background-color: #005f00;
-        color: #c6c6c6;
-    }
-    article.Vimdoc a:hover {
-        background-color: #008787;
-        color: #000000;
-    }
-    article.Vimdoc a.Constant {
-        color: #df8787;
-    }
-    article.Vimdoc a.Constant:hover {
-        background-color: #df8787;
-        color: #000000;
-    }
-    .redirected-by-notranslation {
-        background-color: #afaf00;
-        color: #000000;
-    }
+:root {
+    color-scheme: light;
+}
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+:where(:root[data-theme="dark"]) .DarkModeSwitch select {
+    border-color: #626262;
+    color: #c6c6c6;
+    background-color: #000000;
+}
+:where(:root[data-theme="dark"]) body {
+    color: #c6c6c6;
+    background-color: #000000;
+}
+:where(:root[data-theme="dark"]) :where(a:link) {
+    color: #8080cc;
+}
+:where(:root[data-theme="dark"]) :where(a:visited) {
+    color: #af87af;
+}
+:where(:root[data-theme="dark"]) h1 {
+    color: #8080cc;
+}
+:where(:root[data-theme="dark"]) .Todo {
+    color: #0000af;
+    background-color: #afaf00;
+}
+:where(:root[data-theme="dark"]) .Ignore {
+    color: #282828;
+}
+:where(:root[data-theme="dark"]) .PreProc {
+    color: #8080c0;
+}
+:where(:root[data-theme="dark"]) .Special {
+    color: #eebb00;
+}
+:where(:root[data-theme="dark"]) .Identifier {
+    color: #008787;
+}
+:where(:root[data-theme="dark"]) span.Constant {
+    color: #df8787;
+}
+:where(:root[data-theme="dark"]) .Statement {
+    color: #df8700;
+    font-weight: normal;
+}
+:where(:root[data-theme="dark"]) .Type,
+:where(:root[data-theme="dark"]) span.Type {
+    color: #2e8b57;
+    font-weight: normal;
+}
+:where(:root[data-theme="dark"]) .Error {
+    color: #c6c6c6;
+    background-color: #8b0000;
+}
+:where(:root[data-theme="dark"]) .Comment,
+:where(:root[data-theme="dark"]) .helpExample {
+    color: #00af00;
+}
+:where(:root[data-theme="dark"]) header,
+:where(:root[data-theme="dark"]) nav,
+:where(:root[data-theme="dark"]) article.Vimdoc,
+:where(:root[data-theme="dark"]) footer {
+    border-color: #626262;
+}
+:where(:root[data-theme="dark"]) nav dt {
+    border-top-color: #626262;
+    border-left-color: #8080c0;
+    color: #8080c0;
+}
+:where(:root[data-theme="dark"]) nav li a:active,
+:where(:root[data-theme="dark"]) nav li a:hover {
+    background-color: #005f5f;
+    color: #c6c6c6;
+}
+:where(:root[data-theme="dark"]) nav li a.CurrentPage {
+    background-color: #005f00;
+    color: #c6c6c6;
+}
+:where(:root[data-theme="dark"]) article.Vimdoc a:hover {
+    background-color: #008787;
+    color: #000000;
+}
+:where(:root[data-theme="dark"]) article.Vimdoc a.Constant {
+    color: #df8787;
+}
+:where(:root[data-theme="dark"]) article.Vimdoc a.Constant:hover {
+    background-color: #df8787;
+    color: #000000;
+}
+:where(:root[data-theme="dark"]) .redirected-by-notranslation {
+    background-color: #afaf00;
+    color: #000000;
 }
 
 /* vim:set ts=8 sts=4 sw=4 tw=0 et: */
