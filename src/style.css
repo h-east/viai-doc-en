@@ -208,6 +208,11 @@ footer {
         border-left-color: #8080c0;
         color: #8080c0;
     }
+    nav li a:active,
+    nav li a:hover {
+        background-color: #005f5f;
+        color: #c6c6c6;
+    }
     nav li a.CurrentPage {
         background-color: #005f00;
         color: #c6c6c6;
