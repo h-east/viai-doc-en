@@ -14,10 +14,50 @@ set cpo&vim
 syn match helpHeadline		"^[-A-Z .][-A-Z0-9 .()_]*[ \t]\+\*"me=e-1
 syn match helpSectionDelim	"^===.*===$"
 syn match helpSectionDelim	"^---.*--$"
+if !exists('g:help_example_languages')
+  let g:help_example_languages = #{ vim: 'vim', vim9: 'vim', vim9mix: 'vim' }
+endif
+
 if has("conceal")
-  syn region helpExample	matchgroup=helpIgnore start=" >$" start="^>$" end="^[^ \t]"me=e-1 end="^<" concealends
+  syn region helpExample	matchgroup=helpIgnore
+	\ start="\%(^\| \)>[a-z0-9]*$" end="^[^ \t]"me=e-1 end="^<" concealends
 else
-  syn region helpExample	matchgroup=helpIgnore start=" >$" start="^>$" end="^[^ \t]"me=e-1 end="^<"
+  syn region helpExample	matchgroup=helpIgnore
+	\ start="\%(^\| \)>[a-z0-9]*$" end="^[^ \t]"me=e-1 end="^<"
+endif
+
+for [s:lang, s:syntax] in g:help_example_languages->items()
+  unlet! b:current_syntax
+
+  if s:lang ==# 'vim9'
+    let b:vimsyn_force_vim9script = v:true
+  endif
+
+  " vim9mix also uses the vim9 cluster
+  if s:lang !=# 'vim9mix'
+    " silent! to prevent E403
+    execute 'silent! syn include' $'@helpExampleHighlight_{s:lang}'
+	  \ $'syntax/{s:syntax}.vim'
+  endif
+
+  unlet! b:vimsyn_force_vim9script
+
+  execute $'syn region helpExampleHighlight_{s:lang} matchgroup=helpIgnore'
+	\ $'start=/\%(^\| \)>{s:lang}$/'
+	\ 'end=/^[^ \t]/me=e-1 end=/^</'
+	\ (has("conceal") ? 'concealends' : '')
+	\ $'contains=@helpExampleHighlight_{s:lang} keepend'
+endfor
+unlet! s:lang s:syntax
+
+if has_key(g:help_example_languages, "vim9mix")
+  " for examples at :help vim9-mix and :help vim9-comments
+  syn region vim9LegacyHeader_HelpExample contained
+	\ start="\%(\%(^\| \)>vim9mix\n\)\@<=\_."
+	\ end="^\ze\s*vim9s\%[cript]\>"
+	\ contains=@vimLegacyTop,vimComment,vimLineComment,vimLineStart
+  syn cluster helpExampleHighlight_vim9mix
+	\ contains=@helpExampleHighlight_vim9,vim9LegacyHeader_HelpExample
 endif
 if has("ebcdic")
   syn match helpHyperTextJump	"\\\@<!|[^"*|]\+|" contains=helpBar

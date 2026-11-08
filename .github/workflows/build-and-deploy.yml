@@ -17,7 +17,7 @@ jobs:
       - name: Setup Vim
         uses: thinca/action-setup-vim@v3
         with:
-          vim_version: 'v9.1.0065'
+          vim_version: 'v9.2.1286'
           vim_type: 'Vim'
 
       - name: Checkout

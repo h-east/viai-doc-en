@@ -54,6 +54,14 @@ h1, h2, h3 {
 .helpExample {
     color: #ee0000;
 }
+span.Constant {
+    color: #00cd00;
+}
+.Statement,
+span.Type {
+    color: #0000ff;
+    font-weight: bold;
+}
 
 header {
     padding-bottom: 8px;
@@ -183,11 +191,17 @@ footer {
     .Identifier {
         color: #008787;
     }
+    span.Constant {
+        color: #df8787;
+    }
     .Statement {
         color: #df8700;
+        font-weight: normal;
     }
-    .Type {
+    .Type,
+    span.Type {
         color: #2e8b57;
+        font-weight: normal;
     }
     .Error {
         color: #c6c6c6;
