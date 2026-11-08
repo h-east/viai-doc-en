@@ -22,6 +22,7 @@ div#SearchForm {
 
 body {
     color: #000000;
+    background-color: #ffffff;
     font-family: Verdana, sans-serif;
     width: 800px;
     margin: 16px auto;
@@ -149,6 +150,83 @@ footer {
 
 .EnglishJapaneseLink {
     float: right;
+}
+
+/* Dark mode, colors taken from the classic2 color scheme */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #c6c6c6;
+        background-color: #000000;
+    }
+    :where(a:link) {
+        color: #8080cc;
+    }
+    :where(a:visited) {
+        color: #af87af;
+    }
+    h1 {
+        color: #8080cc;
+    }
+    .Todo {
+        color: #0000af;
+        background-color: #afaf00;
+    }
+    .Ignore {
+        color: #282828;
+    }
+    .PreProc {
+        color: #8080c0;
+    }
+    .Special {
+        color: #eebb00;
+    }
+    .Identifier {
+        color: #008787;
+    }
+    .Statement {
+        color: #df8700;
+    }
+    .Type {
+        color: #2e8b57;
+    }
+    .Error {
+        color: #c6c6c6;
+        background-color: #8b0000;
+    }
+    .Comment,
+    .helpExample {
+        color: #00af00;
+    }
+    header,
+    nav,
+    article.Vimdoc,
+    footer {
+        border-color: #626262;
+    }
+    nav dt {
+        border-top-color: #626262;
+        border-left-color: #8080c0;
+        color: #8080c0;
+    }
+    nav li a.CurrentPage {
+        background-color: #005f00;
+        color: #c6c6c6;
+    }
+    article.Vimdoc a:hover {
+        background-color: #008787;
+        color: #000000;
+    }
+    article.Vimdoc a.Constant {
+        color: #df8787;
+    }
+    article.Vimdoc a.Constant:hover {
+        background-color: #df8787;
+        color: #000000;
+    }
+    .redirected-by-notranslation {
+        background-color: #afaf00;
+        color: #000000;
+    }
 }
 
 /* vim:set ts=8 sts=4 sw=4 tw=0 et: */
