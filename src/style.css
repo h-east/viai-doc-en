@@ -256,6 +256,10 @@ footer {
     border-left-color: #8080c0;
     color: #8080c0;
 }
+:where(:root[data-theme="dark"]) nav li a:link,
+:where(:root[data-theme="dark"]) nav li a:visited {
+    color: #8080cc;
+}
 :where(:root[data-theme="dark"]) nav li a:active,
 :where(:root[data-theme="dark"]) nav li a:hover {
     background-color: #005f5f;
