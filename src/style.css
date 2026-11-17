@@ -10,8 +10,8 @@
     */
 }
 .EnglishTag {
-    background-color: gray;
-    color: white;
+    background-color: #6b6b6b;
+    color: #ffffff;
 }
 
 div#SearchForm {
@@ -21,8 +21,8 @@ div#SearchForm {
 }
 
 body {
-    color: #000000;
-    background-color: #ffffff;
+    color: #262626;
+    background-color: #f4f4f2;
     font-family: Verdana, sans-serif;
     width: 800px;
     margin: 16px auto;
@@ -32,35 +32,47 @@ body {
 h1, h2, h3 {
     margin: 1em;
 }
+/* Light mode, the hues of the classic2 color scheme made darker */
+:where(a:link) {
+    color: #3f3fae;
+}
+:where(a:visited) {
+    color: #7a4f7a;
+}
+h1 {
+    color: #3f3fae;
+}
 .Todo {
-    color: #0000ff;
-    background-color: #ffff00;
+    color: #1f1f8f;
+    background-color: #ece08a;
 }
 .Ignore {
-    color: #ffffff;
+    color: #f4f4f2;
 }
 .PreProc {
-    color: #cd00cd;
+    color: #4b4ba0;
 }
 .Special {
-    color: #ff1493;
+    color: #886b00;
 }
 .Identifier {
-    color: #008b8b;
+    color: #00706f;
 }
 .Comment {
-    color: #ee0000;
+    color: #007a00;
 }
 .helpExample {
-    color: #ee0000;
+    color: #007a00;
 }
 span.Constant {
-    color: #00cd00;
+    color: #b03a3a;
 }
-.Statement,
+.Statement {
+    color: #a85d00;
+}
+.Type,
 span.Type {
-    color: #0000ff;
-    font-weight: bold;
+    color: #23774a;
 }
 
 header {
@@ -90,25 +102,25 @@ nav li a {
 nav dt {
     margin: 0.8em 0 1px;
     border-top: 1px solid #c3c3c3;
-    border-left: 4px solid #cd00cd;
+    border-left: 4px solid #4b4ba0;
     padding: 1px 0 1px 4px;
-    color: #CD00CD;
+    color: #4b4ba0;
 }
 
 nav li a:link,
 nav li a:visited {
-    color: #68e;
+    color: #3f3fae;
 }
 
 nav li a:active,
 nav li a:hover {
-    background-color: #e68;
-    color: #fff;
+    background-color: #00706f;
+    color: #ffffff;
 }
 
 nav li a.CurrentPage {
-    background-color: #68e;
-    color: #fff;
+    background-color: #007a00;
+    color: #ffffff;
 }
 
 article.Vimdoc {
@@ -131,16 +143,16 @@ article.Vimdoc a:active {
 }
 
 article.Vimdoc a:hover {
-    background-color: #008b8b;
+    background-color: #00706f;
     color: #ffffff;
 }
 
 article.Vimdoc a.Constant {
-    color: #68e;
+    color: #b03a3a;
 }
 
 article.Vimdoc a.Constant:hover {
-    background-color: #68e;
+    background-color: #b03a3a;
     color: #ffffff;
 }
 
@@ -153,7 +165,7 @@ footer {
 .redirected-by-notranslation {
     text-align: center;
     font-size: small;
-    background-color: yellow;
+    background-color: #ece08a;
 }
 
 .EnglishJapaneseLink {
